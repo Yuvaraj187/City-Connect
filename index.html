@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>CityConnect - Transport Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+          },
+        },
+      }
+    </script>
+    <script src="https://unpkg.com/recharts/umd/Recharts.min.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* ... All of your other styles are unchanged ... */
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      .dark ::-webkit-scrollbar-track { background: #0f172a; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+      .dark ::-webkit-scrollbar-thumb { background: #334155; }
+      ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+      .dark ::-webkit-scrollbar-thumb:hover { background: #475569; }
+      @keyframes pulse-animation { 0% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(79, 70, 229, 0); } 100% { box-shadow: 0 0 0 0 rgba(79, 70, 229, 0); } }
+      .pulse-animate { animation: pulse-animation 2s infinite; }
+      @keyframes content-fade-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      .content-animate-in { animation: content-fade-in 0.4s ease-out forwards; }
+      .emergency-mode body, .emergency-mode #root { background-color: #000000 !important; color: #cccccc !important; }
+      .emergency-mode .bg-white, .emergency-mode .dark\:bg-slate-800, .emergency-mode .dark\:bg-slate-900 { background-color: #000000 !important; border-color: #333 !important; }
+      .emergency-mode .bg-slate-50, .emergency-mode .dark\:bg-slate-800\/50, .emergency-mode .dark\:bg-slate-700, .emergency-mode .dark\:bg-slate-900, .emergency-mode .dark\:bg-slate-800\/80 { background-color: #000000 !important; }
+      .emergency-mode .text-slate-800, .emergency-mode .dark\:text-slate-100, .emergency-mode .text-slate-900, .emergency-mode .dark\:text-slate-200, .emergency-mode .text-slate-700 { color: #f1f5f9 !important; }
+      .emergency-mode .text-slate-500, .emergency-mode .dark\:text-slate-400, .emergency-mode .text-slate-600 { color: #94a3b8 !important; }
+      .emergency-mode .shadow-md, .emergency-mode .shadow-lg, .emergency-mode .shadow-sm, .emergency-mode .shadow-xl, .emergency-mode .shadow-2xl { box-shadow: none !important; border: 1px solid #333; }
+      .emergency-mode button, .emergency-mode input, .emergency-mode select, .emergency-mode a, .emergency-mode div[class*="border"] { border-color: #475569 !important; }
+      .emergency-mode .text-indigo-600, .emergency-mode .dark\:text-indigo-400 { color: #a5b4fc !important; }
+      .emergency-mode .bg-indigo-600 { background-color: transparent !important; border: 1px solid #818cf8 !important; color: #c7d2fe !important; }
+      .emergency-mode img { display: none !important; }
+    </style>
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body class="antialiased bg-slate-100 text-slate-700 font-sans dark:bg-slate-900 dark:text-slate-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
